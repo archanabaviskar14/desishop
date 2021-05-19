@@ -1,0 +1,25 @@
+<div class="sticky-top">
+
+    <div class="list-group">
+        <a 
+        routerLink="/"   
+        class="list-group-item list-group-item-action"
+        [class.active]="!category">All</a>  <!--routerLink='/' for home page or for on the same page i.e productcomp-->
+        
+        <a 
+        *ngFor="let c of categories$ | async" 
+        routerLink="/products"
+        [queryParams]="{category:c.key}"
+        class="list-group-item list-group-item-action"
+        [class.active]="category===c.key">  <!--class for highlighting category so we need input from product i.e category:string-->
+            {{c.payload.val().name}}
+        </a>
+    
+      </div>
+
+</div>
+
+
+
+  <!--to fix the left menu as we scroll down we need to use sticky-top class from getbootstrap->utilities->position to stick it on 1 place
+and also use padding in css to see it properly-->

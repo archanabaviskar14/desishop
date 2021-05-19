@@ -1,0 +1,27 @@
+
+
+<div *ngIf="product.title" class="card" >
+   <div class="card-img-wrapper">
+   <img *ngIf="product.imageurl" class="card-img-top" [src]="product.imageurl" alt="{{product.title}}">
+   <ul class="list-inline text-center member-icons">
+      <li class="list-inline-item"><button class="btn btn-success"><i class="far fa-edit"></i></button></li>
+      <li  class="list-inline-item"><button class="btn btn-success"><i class="far fa-address-book"></i></button></li>
+  </ul>
+</div>
+   <div class="card-body">
+     
+     <h5 class="card-title" style="text-align: center;">{{product.title}}</h5>
+     
+     <p class="card-text" style="text-align: center;">{{product.price | currency:'USD':'symbol'}}</p>
+    </div>
+    <div *ngIf="showActions && shoppingCart" class="card-footer">
+       <button  *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity"
+       (click)="addToCart()"
+       class="btn btn-success">Add to cart</button>
+       <ng-template #updateQuantity>
+          <app-product-quantity [product]="product" [shopping-cart]="shoppingCart"></app-product-quantity>
+       </ng-template>   
+    </div>
+ </div>
+<br>
+<!--btn-block is used to cover the whole button as a block ie add to card button turns to whole block big one-->

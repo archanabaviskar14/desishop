@@ -1,0 +1,15 @@
+<div class="row no-gutters">     <!--no-gutters removes negative margin space given by bootstrap by the fault-->
+    <div class="col-2">
+        <button 
+        (click)="removeFromCart()"
+        class="btn btn-secondary btn-block">-</button>
+    </div>
+    <div class="col text-center">
+        {{ shoppingCart.getQuantity(product) }} in cart
+    </div>
+    <div class="col-2">
+        <button
+        (click)="addToCart()"
+        class="btn btn-secondary btn-block">+</button>
+    </div>
+</div>

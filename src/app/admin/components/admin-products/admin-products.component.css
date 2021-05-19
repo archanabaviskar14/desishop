@@ -1,0 +1,22 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+td, th {
+  width: 25%;
+}
+.btn{
+  background-color: #c1d62e;
+}
+.form-control{
+  border-color: #c1d62e;
+}

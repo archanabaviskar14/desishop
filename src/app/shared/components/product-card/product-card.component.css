@@ -1,0 +1,52 @@
+
+.card{
+  
+    width: 80%;
+    
+}
+.card:hover img{
+   
+    transform:scale(2,2);
+    transition: 100ms;
+    transition-timing-function: ease-out;
+    
+    height:100px;
+}
+.card img {
+    transform:scale(1,1);
+    transition: 100ms;
+    transition-timing-function: ease-out;
+   
+    height:100px;
+
+}
+.card-img-wrapper{
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+.card-footer button{
+    cursor: pointer;
+    margin-left: 15px;
+    
+}
+.h5, h5 {
+    font-size: 0.8rem;
+}
+
+.member-icons{
+    position: absolute;
+    bottom: -30%;           /*the buttons are completely hidden*/
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    
+}
+.card-img-wrapper:hover .member-icons{
+    bottom: 0;              /*the buttons are appears now after hover*/
+    opacity: 1;
+}
